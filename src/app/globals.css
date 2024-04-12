@@ -24,6 +24,12 @@ body.dark .footer p{
 }
 
 /* HOME CSS in Dark mode */
+
+body.dark .intro-card-logo {
+  box-shadow: 0 0 30px 0 rgba(20, 184, 166, 0.4);
+  border: 2px solid #e0e0e0;
+}
+
 body.dark .intro-card h1 {
   @apply text-white;
 }

@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import './IntroCard.css';
 import PropTypes from 'prop-types';
 
-const IntroCard = ({ logo, name, content, link }) => {
+const IntroCard = ({ logo, name, content, links }) => {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [logoSrc, setLogoSrc] = useState(logo);
 
@@ -30,24 +30,20 @@ const IntroCard = ({ logo, name, content, link }) => {
   }, [isDarkMode, logo]);
 
   return (
-    <div data-testid="introCard" className="intro-card">
-      <div>
-        <img data-testid="introCardLogo" src={logoSrc} alt="Company name Logo" className="intro-card-logo" />
-        <h1 data-testid="introCardName">{name}</h1>
+      <div data-testid="introCard" className="intro-card">
+        <div>
+          <img data-testid="introCardLogo" src={logo} alt="Company name Logo" className="intro-card-logo" />
+          <h1 data-testid="introCardName">{name}</h1>
+        </div>
+        <div className={'links'}>
+          <p data-testid="introCardContent">{content}</p>
+          {links.map((link, index) => (
+              <a key={index} href={link.url} target="_blank" rel="noreferrer">
+                <img src={link.icon} alt={link.title} />
+              </a>
+          ))}
+        </div>
       </div>
-      <div className={'links'}>
-        <p data-testid="introCardContent">{content}</p>
-        <a data-testid="introCardLink" href={link} target="_blank" rel="noreferrer">
-          <img src="linkedIn.png" alt="link"/>
-        </a>
-        <a data-testid="introCardLink" href={link} target="_blank" rel="noreferrer">
-          <img src="github.png" alt="link"/>
-        </a>
-        <a data-testid="introCardLink" href={link} target="_blank" rel="noreferrer">
-          <img src="x.png" alt="link"/>
-        </a>
-      </div>
-    </div>
   );
 };
 
@@ -55,7 +51,13 @@ IntroCard.propTypes = {
   logo: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   content: PropTypes.string.isRequired,
-  link: PropTypes.string,
+  links: PropTypes.arrayOf(
+      PropTypes.shape({
+        title: PropTypes.string.isRequired,
+        url: PropTypes.string.isRequired,
+        icon: PropTypes.string.isRequired,
+      })
+  ).isRequired,
 };
 
 IntroCard.defaultProps = {

@@ -30,6 +30,13 @@ const links = [
   },
 ];
 
+//Intro social links
+const introLinks = [
+  { title: 'LinkedIn', url: 'https://www.linkedin.com/in/oliver-rivera-software-engineer/', icon: 'linkedIn.png' },
+  { title: 'GitHub', url: 'https://github.com/olael94', icon: 'github.png' },
+  { title: 'X', url: 'https://x.com/oliverrivera94', icon: 'x.png' },
+];
+
 //WorkWidget component needed Array
 const experiences = [
   {
@@ -108,6 +115,7 @@ export default function Home() {
                   name={'Software Engineer, Father, and Believer'}
                   logo={'Me.jpg'}
                   content={'Software Engineering student with a background in Mechatronics Engineering and Design. I`m passionate about developing functional and well-designed software. With a creative problem-solving mindset, I aim to become an outstanding full-stack developer. I`ll bring my expertise while eagerly seeking growth in the tech community.'}
+                  links={introLinks}
               />
             </section>
             <section className="articles-widgets-container">
