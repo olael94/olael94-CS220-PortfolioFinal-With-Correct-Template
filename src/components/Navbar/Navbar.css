@@ -1,0 +1,63 @@
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 300px; /* This will set the maximum width of the Navbar */
+  margin: auto; /* This will center the Navbar */
+  background-color: #f8fafc;
+  border-radius: 48px;
+  border-color: #d4d4d8;
+  border-style: solid;
+  border-width: 1px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.navbar ul {
+  display: flex;
+  column-gap: 24px;
+  padding: 0 24px;
+  justify-content: center;
+  align-items: center;
+  height: 32px;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    width: 100px;
+    position: fixed;
+    top: 24px;
+    right: 70px;
+  }
+}
+
+.link {
+  color: #27272a;
+}
+
+.link:hover {
+  text-decoration: none;
+  text-decoration-color: #38bdf8;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.link-active {
+  /*Color for active link text*/
+  position: relative; /* Ensure the gradient is applied to the text */
+  color: transparent; /* Hide the actual text content */
+  background-image: linear-gradient(to right, #14B8A6, #007bff);
+  -webkit-background-clip: text; /* For Safari/Chrome */
+  background-clip: text; /* Apply gradient to text */
+}
+
+.link-active::after {
+  /* Color for active link border */
+  content: ''; /* Create a pseudo-element for the gradient */
+  position: absolute;
+  bottom: -9px; /* Position the gradient below the link text */
+  left: 0;
+  width: 100%;
+  height: 2px; /* Adjust the height of the gradient */
+  background: linear-gradient(to right, transparent, #14B8A6, #007bff, transparent); /* Define your gradient colors */
+}
