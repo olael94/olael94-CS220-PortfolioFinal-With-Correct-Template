@@ -4,7 +4,7 @@ import './SocialLinks.css';
 import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
 
-const ProjectCard = ({ socialLinks }) => {
+const SocialLinks = ({ socialLinks }) => {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
@@ -18,19 +18,19 @@ const ProjectCard = ({ socialLinks }) => {
   return (
     <div data-testid="socialLinks-testid" className="socialLinks">
       <ul>
-        {socialLinks.map((socialLink, index) => (
-          <li key={index}>
-            <a data-testid={`projectCardLink${index}`} href={socialLink.link} target="_blank" rel="noreferrer">
-              <img src= {socialLink.imageSrc}  alt="link"/> Follow me on {socialLink.name}
-            </a>
-          </li>
-        ))}
+          {socialLinks.map((socialLink, index) => (
+              <li key={index}>
+                  <a data-testid={`socialLinks${index}`} href={socialLink.link} target="_blank" rel="noreferrer">
+                      <img src={socialLink.imageSrc} alt="link" /> Follow me on {socialLink.name}
+                  </a>
+              </li>
+          ))}
       </ul>
     </div>
   );
 };
 
-ProjectCard.propTypes = {
+SocialLinks.propTypes = {
   socialLinks: PropTypes.arrayOf(
     PropTypes.shape({
       name: PropTypes.string.isRequired,
@@ -40,8 +40,8 @@ ProjectCard.propTypes = {
   ),
 };
 
-ProjectCard.defaultProps = {
+SocialLinks.defaultProps = {
   link: '#',
 };
 
-export default ProjectCard;
+export default SocialLinks;

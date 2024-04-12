@@ -26,21 +26,9 @@ const links = [
 ];
 
 const socialLinks = [
-    {
-        name: "X",
-        link: "#",
-        imageSrc: "x.png",
-    },
-    {
-        name: "Github",
-        link: "#",
-        imageSrc: "github.png",
-    },
-    {
-        name: "Linkedin",
-        link: "#",
-        imageSrc: "linkedIn.png",
-    },
+    { name: 'LinkedIn', link: 'https://www.linkedin.com/in/oliver-rivera-software-engineer/', imageSrc: 'linkedIn.png' },
+    { name: 'GitHub', link: 'https://github.com/olael94', imageSrc: 'github.png' },
+    { name: 'X', link: 'https://x.com/oliverrivera94', imageSrc: 'x.png' },
 ];
 
 export default function Home() {
