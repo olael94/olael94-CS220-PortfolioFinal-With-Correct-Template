@@ -1,4 +1,6 @@
-import Navbar from "@/components/Navbar/Navbar";
+import dynamic from "next/dynamic";
+
+const Navbar= dynamic(() => import ("@/components/Navbar/Navbar"), { ssr: false});
 import Footer from "@/components/Footer/Footer";
 import WorkWidget from "@/components/WorkWidget/WorkWidget";
 import SkillsWidget from "@/components/SkillsWidget/SkillsWidget";
