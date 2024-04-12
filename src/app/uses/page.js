@@ -54,20 +54,20 @@ export default function Home() {
                             </div>
                             <div className="items-container">
                                 <Usescard
-                                    name="Custom-built PC "
-                                    content1="Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi.."
+                                    name=" Apple Mac Pro M1 Max "
+                                    content1="This beast has taken me thru all my coding projects at school. I saved for a while to buy it. It runs all my projects smothly and can handle my 500 tabs open without a problem"
                                 />
                                 <Usescard
-                                    name="Apple Mac Pro"
-                                    content1="Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi.."
+                                    name="Acer Nitro XZ342CK  34 inches Curved Ultrawide Gaming Monitor"
+                                    content1="This monitor allows me to look at multiple navigators, tabs and windows at the same time. It actually saves me a lot of time by not having to navigate to find a window I need to look at. "
                                 />
                                 <Usescard
-                                    name="Dell XPS Tower"
-                                    content1="Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi.."
+                                    name="Urmust Laptop Notebook Stand Holder"
+                                    content1="This amazgin stand allows me to put my Mac Pro at eye level, and my Ultrawide monitor level as well. This prevents me to develop my hunchback further. "
                                 />
                                 <Usescard
-                                    name="Lenovo ThinkStation"
-                                    content1="Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi.."
+                                    name="Apple Homepod Mini"
+                                    content1="Since I am pretty picky when it comes to sound, I need to have a sound-quality device for my different needs. The integration of this device with my Mac pro makes my media watching more enjoyable"
                                 />
                                 <Usescard
                                     name="HP Z Workstation"
