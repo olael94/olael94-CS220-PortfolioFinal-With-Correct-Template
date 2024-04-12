@@ -31,6 +31,12 @@ const socialLinks = [
     { name: 'X', link: 'https://x.com/oliverrivera94', imageSrc: 'x.png' },
 ];
 
+const menuLinkData = {
+    email: "orivera94@gmail.com",
+    imageSrc: "email.png",
+    link: "mailto:orivera94@gmail.com",
+};
+
 export default function Home() {
   return (
       <div className="body">
@@ -74,11 +80,7 @@ export default function Home() {
                       </section>
                       <section className="right-socials-container">
                           <SocialLinks socialLinks={socialLinks} />
-                          <MenuLink
-                              email="mrbean@gmail.com"
-                              imageSrc="email.png"
-                              link="#"
-                          />
+                          <MenuLink {...menuLinkData}/>
                       </section>
                   </section>
               </div>

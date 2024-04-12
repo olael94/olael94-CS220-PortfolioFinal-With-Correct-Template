@@ -4,7 +4,7 @@ import './MenuLink.css';
 import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
 
-const ProjectCard = ({ email, imageSrc, link }) => {
+const MenuLink = ({ email, imageSrc, link }) => {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
@@ -21,18 +21,14 @@ const ProjectCard = ({ email, imageSrc, link }) => {
   );
 };
 
-ProjectCard.propTypes = {
-  socialLinks: PropTypes.arrayOf(
-    PropTypes.shape({
-      name: PropTypes.string.isRequired,
-      link: PropTypes.string.isRequired,
-      imageSrc: PropTypes.string.isRequired,
-    })
-  ),
+MenuLink.propTypes = {
+    email: PropTypes.string.isRequired,
+    imageSrc: PropTypes.string.isRequired,
+    link: PropTypes.string,
 };
 
-ProjectCard.defaultProps = {
+MenuLink.defaultProps = {
   link: '#',
 };
 
-export default ProjectCard;
+export default MenuLink;
