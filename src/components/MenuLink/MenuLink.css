@@ -22,8 +22,9 @@
 
 .menu-link a:hover {
   font-size: 16px;
-  color: #000;
-  border-bottom: 1px solid #000;
+  color: #14B8A6;
+  border-bottom: 2px solid #14B8A6;
+  border-radius: 4px;
 }
 
 

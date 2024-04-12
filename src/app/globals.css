@@ -107,6 +107,10 @@ body.dark .socialLinks a {
   @apply text-custom-grey;
 }
 
+body.dark .socialLinks a:hover{
+  color: #14B8A6;
+}
+
 /* PROJECTS CSS DarkMode */
 body.dark .project-card {
   @apply text-custom-grey;
@@ -192,6 +196,7 @@ footer {
 }
 
 /* HOME page.jsx CSS */
+
 .articles-widgets-container {
   display: flex;
   flex-direction: row;
