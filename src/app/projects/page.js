@@ -1,9 +1,9 @@
 import dynamic from 'next/dynamic';
 
-const Navbar = dynamic(() => import('@/components/Navbar/Navbar'));
+const Navbar = dynamic(() => import('@/components/Navbar/Navbar'), { ssr: false });
 import Footer from "@/components/Footer/Footer";
-const ThemeSwitcher = dynamic(() => import('@/components/ThemeSwitcher/ThemeSwitcher'));
-const ProjectCard = dynamic(() => import('@/components/ProjectCard/ProjectCard'));
+const ThemeSwitcher = dynamic(() => import('@/components/ThemeSwitcher/ThemeSwitcher'), { ssr: false });
+const ProjectCard = dynamic(() => import('@/components/ProjectCard/ProjectCard'), { ssr: false });
 import React from "react";
 import ProjectPageIntro from "@/components/ProjectPageIntro/ProjectPageIntro"; // Added React import
 
