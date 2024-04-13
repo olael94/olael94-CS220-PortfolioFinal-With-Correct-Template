@@ -1,9 +1,11 @@
-import Navbar from "@/components/Navbar/Navbar";
+import dynamic from 'next/dynamic';
+
+const Navbar = dynamic(() => import('@/components/Navbar/Navbar'));
 import Footer from "@/components/Footer/Footer";
-import ThemeSwitcher from "@/components/ThemeSwitcher/ThemeSwitcher";
+const ThemeSwitcher = dynamic(() => import('@/components/ThemeSwitcher/ThemeSwitcher'));
 import AboutMe from "@/components/AboutMe/AboutMe";
-import SocialLinks from "@/components/SocialLinks/SocialLinks";
-import MenuLink from "@/components/MenuLink/MenuLink";
+const SocialLinks = dynamic(() => import('@/components/SocialLinks/SocialLinks'));
+const MenuLink = dynamic(() => import('@/components/MenuLink/MenuLink'));
 
 //Links for Footer
 const links = [

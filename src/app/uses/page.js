@@ -1,7 +1,9 @@
+import dynamic from 'next/dynamic';
+
 import React from 'react';
-import Navbar from "@/components/Navbar/Navbar";
+const Navbar = dynamic(() => import('@/components/Navbar/Navbar'));
 import Footer from "@/components/Footer/Footer";
-import ThemeSwitcher from "@/components/ThemeSwitcher/ThemeSwitcher";
+const ThemeSwitcher = dynamic(() => import('@/components/ThemeSwitcher/ThemeSwitcher'));
 import AboutMe from "@/components/AboutMe/AboutMe";
 import Usescard from "@/components/Usescard/Usescard";
 

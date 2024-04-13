@@ -1,7 +1,9 @@
-import Navbar from "@/components/Navbar/Navbar";
+import dynamic from 'next/dynamic';
+
+const Navbar = dynamic(() => import('@/components/Navbar/Navbar'));
 import Footer from "@/components/Footer/Footer";
-import ThemeSwitcher from "@/components/ThemeSwitcher/ThemeSwitcher";
-import ProjectCard from "@/components/ProjectCard/ProjectCard";
+const ThemeSwitcher = dynamic(() => import('@/components/ThemeSwitcher/ThemeSwitcher'));
+const ProjectCard = dynamic(() => import('@/components/ProjectCard/ProjectCard'));
 import React from "react";
 import ProjectPageIntro from "@/components/ProjectPageIntro/ProjectPageIntro"; // Added React import
 
