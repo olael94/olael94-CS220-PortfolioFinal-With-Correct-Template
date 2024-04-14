@@ -10,12 +10,27 @@ import { usePathname } from "next/navigation";
 
 const Navbar = ({ options }) => {
   const currentPath = usePathname();
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const [isMobile, setIsMobile] = useState(false);
+
   useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth <= 768);
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
+    let checkIsMobile = () => {
+      setIsMobile(document.documentElement.clientWidth <= 768);
+    };
+
+    checkIsMobile(); // Check initial mobile status
+
+    // Add event listener for viewport width changes
+    const handleResize = () => {
+      checkIsMobile();
+    };
+
+    document.addEventListener('resize', handleResize);
+
+    // Cleanup event listener on component unmount
+    return () => {
+      document.removeEventListener('resize', handleResize);
+    };
+  }, []); // Empty dependency array to run effect only once
 
   if (!options) {
     return null;

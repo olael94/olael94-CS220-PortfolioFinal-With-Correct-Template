@@ -1,11 +1,11 @@
 import dynamic from 'next/dynamic';
 
-const Navbar = dynamic(() => import('@/components/Navbar/Navbar'), { ssr: false });
+const Navbar = dynamic(() => import('@/components/Navbar/Navbar'));
 import Footer from "@/components/Footer/Footer";
-const ThemeSwitcher = dynamic(() => import('@/components/ThemeSwitcher/ThemeSwitcher'), { ssr: false });
+const ThemeSwitcher = dynamic(() => import('@/components/ThemeSwitcher/ThemeSwitcher'));
 import AboutMe from "@/components/AboutMe/AboutMe";
-const SocialLinks = dynamic(() => import('@/components/SocialLinks/SocialLinks'), { ssr: false });
-const MenuLink = dynamic(() => import('@/components/MenuLink/MenuLink'), { ssr: false });
+const SocialLinks = dynamic(() => import('@/components/SocialLinks/SocialLinks'));
+const MenuLink = dynamic(() => import('@/components/MenuLink/MenuLink'));
 
 //Links for Footer
 const links = [
