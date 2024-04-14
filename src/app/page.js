@@ -63,7 +63,7 @@ const experiences = [
   },
   {
     logo: '/microsoft.png',
-    organization: 'Microsoft',
+    organization: 'Miicrosoft',
     jobTitle: 'Software Engineer',
     startYear: 2010,
     endYear: 2011,
