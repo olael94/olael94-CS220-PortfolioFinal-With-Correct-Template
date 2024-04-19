@@ -1,63 +1,94 @@
-.navbar {
+.navbar-container {
   display: flex;
   justify-content: center;
-  align-items: center;
-  max-width: 300px; /* This will set the maximum width of the Navbar */
-  margin: auto; /* This will center the Navbar */
-  background-color: #f8fafc;
-  border-radius: 48px;
-  border-color: #d4d4d8;
-  border-style: solid;
-  border-width: 1px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  font-size: 14px;
-  font-weight: 500;
+  width: 350px;
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 20px;
+  margin: 0 auto;
 }
 
-.navbar ul {
+.menu-container {
+  list-style-type: none;
+  padding: 0;
   display: flex;
-  column-gap: 24px;
-  padding: 0 24px;
+  justify-content: center;
+}
+
+.menu-container .menu-items {
+  display: flex;
+  justify-content: center;
+  flex-direction: row; /* Horizontal layout for desktop */
+}
+
+.menu-container .menu-items li {
+  margin-left: 15px;
+  margin-right: 15px; /* Adjust as needed */
+  text-align: center; /* Center align text inside list items */
+}
+
+.nav-link-container {
+  color: #fff;
+  text-decoration: none;
+  position: relative;
+}
+
+.nav-link-container a {
+  display: flex;
   justify-content: center;
   align-items: center;
-  height: 32px;
+}
+
+.nav-link-container::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #ff7a18, #af002d);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.nav-link-container:hover::after,
+.nav-link-container:active::after,
+.nav-link-container.active::after {
+  transform: scaleX(1);
+}
+
+.menu-toggle-container {
+  text-align: center; /* Center align the text */
 }
 
 @media (max-width: 768px) {
-  .navbar {
-    width: 100px;
-    position: fixed;
-    top: 24px;
-    right: 70px;
+  .navbar-container {
+    width: 150px;
+    display: flex;
+    flex-direction: column;
   }
-}
 
-.link {
-  color: #27272a;
-}
+  .menu-container {
+    display: flex;
+    flex-direction: column; /* Change to column layout on mobile */
+    align-items: center; /* Center align links horizontally */
+    padding: 10px 0; /* Add padding for spacing */
+  }
 
-.link:hover {
-  text-decoration: none;
-  text-decoration-color: #38bdf8;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-}
+  .menu-container .menu-items {
+    display: flex;
+    flex-direction: column; /* Change to column layout on mobile */
+    align-items: center; /* Center align links horizontally */
+  }
 
-.link-active {
-  /*Color for active link text*/
-  position: relative; /* Ensure the gradient is applied to the text */
-  color: transparent; /* Hide the actual text content */
-  background-image: linear-gradient(to right, #14B8A6, #007bff);
-  -webkit-background-clip: text; /* For Safari/Chrome */
-  background-clip: text; /* Apply gradient to text */
-}
+  .menu-container .menu-items li {
+    margin-right: 0; /* Remove margin between dropdown items */
+    margin-left: 0;
+    margin-bottom: 10px; /* Add vertical spacing between dropdown items */
+  }
 
-.link-active::after {
-  /* Color for active link border */
-  content: ''; /* Create a pseudo-element for the gradient */
-  position: absolute;
-  bottom: -9px; /* Position the gradient below the link text */
-  left: 0;
-  width: 100%;
-  height: 2px; /* Adjust the height of the gradient */
-  background: linear-gradient(to right, transparent, #14B8A6, #007bff, transparent); /* Define your gradient colors */
+  .menu-toggle-container {
+    justify-content: center;
+  }
 }

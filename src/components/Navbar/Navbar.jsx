@@ -1,67 +1,64 @@
-// eslint-disable-next-line no-unused-vars
 'use client';
 
-import React, {useEffect, useState} from 'react';
-import PropTypes from 'prop-types';
-import './Navbar.css';
-import Dropdown from './Dropdown/Dropdown';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { usePathname } from "next/navigation";
+import './Navbar.css'
+import { useMediaQuery } from 'react-responsive'; // Import useMediaQuery from react-responsive
 
-const Navbar = ({ options }) => {
-  const currentPath = usePathname();
-  const [isMobile, setIsMobile] = useState(false);
+const Navbar = () => {
+  const isMobile = useMediaQuery({ query: '(max-width: 768px)' }); // Adjust the breakpoint as needed
+  const [showLinks, setShowLinks] = useState(false);
+  const [activeLink, setActiveLink] = useState('');
 
-  useEffect(() => {
-    let checkIsMobile = () => {
-      setIsMobile(document.documentElement.clientWidth <= 768);
+  const toggleMenu = () => {
+    setShowLinks(!showLinks);
+  };
+
+    const handleLinkClick = (link) => {
+        console.log("Clicked link:", link);
+        setShowLinks(false); // Close the dropdown menu
+        setActiveLink(link);
     };
 
-    checkIsMobile(); // Check initial mobile status
-
-    // Add event listener for viewport width changes
-    const handleResize = () => {
-      checkIsMobile();
-    };
-
-    document.addEventListener('resize', handleResize);
-
-    // Cleanup event listener on component unmount
-    return () => {
-      document.removeEventListener('resize', handleResize);
-    };
-  }, []); // Empty dependency array to run effect only once
-
-  if (!options) {
-    return null;
-  }
+    useEffect(() => {
+        setShowLinks(false); // Close the dropdown menu when switching between mobile and normal views
+    }, [isMobile]); // Trigger effect when isMobile changes
 
   return (
-    <nav className="navbar" data-testid="nav">
-      {isMobile ? (
-        <Dropdown options={options} />
-      ) : (
-        <ul data-testid="ul">
-          {options.map((option, index) => (
-            <li key={index} data-testid={`li${index}`}>
-              <Link href={option.path} className={`link ${currentPath === option.path ? 'link-active' : ''}`} data-testid={`a${index}`}>
-                {option.label}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      )}
-    </nav>
+      <nav>
+        <div className="navbar-container">
+          {isMobile && (
+              <div className="menu-toggle-container" onClick={toggleMenu}>
+                Menu
+              </div>
+          )}
+          {(isMobile && showLinks) || !isMobile ? (
+              <ul className="menu-container">
+                  <div className="menu-items">
+                      <li>
+                          <Link href="/" className={`nav-link-container ${activeLink === '/' ? 'active' : ''}`}
+                                onClick={() => handleLinkClick('/')}>Home</Link>
+                      </li>
+                      <li>
+                          <Link href="/about"
+                                className={`nav-link-container ${activeLink === '/about' ? 'active' : ''}`}
+                                onClick={() => handleLinkClick('/about')}>About</Link>
+                      </li>
+                      <li>
+                          <Link href="/projects"
+                                className={`nav-link-container ${activeLink === '/projects' ? 'active' : ''}`}
+                                onClick={() => handleLinkClick('/projects')}>Projects</Link>
+                      </li>
+                      <li>
+                          <Link href="/uses" className={`nav-link-container ${activeLink === '/uses' ? 'active' : ''}`}
+                                onClick={() => handleLinkClick('/uses')}>Uses</Link>
+                      </li>
+                  </div>
+              </ul>
+          ) : null}
+        </div>
+      </nav>
   );
-};
-
-Navbar.propTypes = {
-  options: PropTypes.arrayOf(
-    PropTypes.shape({
-      path: PropTypes.string.isRequired,
-      label: PropTypes.string.isRequired,
-    })
-  ).isRequired,
 };
 
 export default Navbar;
