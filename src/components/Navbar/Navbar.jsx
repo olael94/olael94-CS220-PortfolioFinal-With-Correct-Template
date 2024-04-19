@@ -29,7 +29,8 @@ const Navbar = () => {
         <div className="navbar-container">
           {isMobile && (
               <div className="menu-toggle-container" onClick={toggleMenu}>
-                Menu
+                  {/* Menu Icon using Unicode */}
+                  &#9776;
               </div>
           )}
           {(isMobile && showLinks) || !isMobile ? (
