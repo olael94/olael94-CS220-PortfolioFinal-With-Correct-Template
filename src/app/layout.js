@@ -20,13 +20,13 @@ export default function RootLayout({ children }) {
     <body className={roboto.className}>
     <ul className={'flex flex-row space-x-4 my-4'}>
       <li>
-        <Link href="/">Home</Link>
+        <Link href="/"></Link>
       </li>
       <li>
-        <Link href="/about">About</Link>
+        <Link href="/about"></Link>
       </li>
       <li>
-        <Link href="/projects">Projects</Link>
+        <Link href="/projects"></Link>
       </li>
     </ul>
     {children}
