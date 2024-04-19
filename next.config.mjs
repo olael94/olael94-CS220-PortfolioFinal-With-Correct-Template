@@ -8,7 +8,7 @@ const env = process.env.NODE_ENV || 'development';
 /** @type {import('next').NextConfig} */
 const nextConfigProd = {
   output: 'export',
-  basePath: '/portfolio',
+  basePath: '',
   images: {
     loader: 'custom',
     loaderFile: './src/lib/image.loader.js',
