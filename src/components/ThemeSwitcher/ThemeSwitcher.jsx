@@ -1,22 +1,20 @@
 'use client';
 
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './ThemeSwitcher.css';
 import PropTypes from 'prop-types';
 
 const ThemeSwitcher = ({ darkClassName }) => {
-  // Check the user's preferred color scheme
-  const prefersDarkMode = useMemo(() => {
-    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-  }, []);
-
   // State to hold the selected theme
-  const [isDarkMode, setIsDarkMode] = useState(prefersDarkMode);
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
-  // Apply the selected theme (dark or light) when the component mounts
   useEffect(() => {
-    applyTheme();
-  });
+    // Check user preference only on client-side
+    if (typeof window !== 'undefined') {
+      const prefersDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      setIsDarkMode(prefersDarkMode);
+    }
+  }, []);
 
   // Toggle between dark and light mode
   const toggleTheme = () => {
@@ -32,12 +30,17 @@ const ThemeSwitcher = ({ darkClassName }) => {
     }
   };
 
+  useEffect(() => {
+    // Apply theme after state update
+    applyTheme();
+  }, [isDarkMode]); // Run on change of isDarkMode
+
   return (
-    <div className={isDarkMode ? 'dark' : ''}>
-      <button data-testid="themeSwitcherButton" className={'btn'} onClick={toggleTheme}>
-        <img src="sunIcon.png" alt="Sun Icon"/>
-      </button>
-    </div>
+      <div className={isDarkMode ? 'dark' : ''}>
+        <button data-testid="themeSwitcherButton" className={'btn'} onClick={toggleTheme}>
+          <img src="sunIcon.png" alt="Sun Icon"/>
+        </button>
+      </div>
   );
 };
 
