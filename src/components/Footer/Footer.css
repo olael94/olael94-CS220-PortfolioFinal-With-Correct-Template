@@ -6,7 +6,7 @@
   flex-direction: row;
   justify-items: center;
   justify-content: space-between;
-  background-color: #f8f9fa;
+  background-color: rgba(244, 245, 245);
   padding: 24px 40px;
   border-top: 1px solid #3F3F46;
 }

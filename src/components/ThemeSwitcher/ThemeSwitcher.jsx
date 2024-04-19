@@ -38,7 +38,7 @@ const ThemeSwitcher = ({ darkClassName }) => {
   return (
       <div className={isDarkMode ? 'dark' : ''}>
         <button data-testid="themeSwitcherButton" className={'btn'} onClick={toggleTheme}>
-          <img src="sunIcon.png" alt="Sun Icon"/>
+          <img src={isDarkMode ? "Moon.png" : "sunIcon.png"} alt="Sun Icon"/>
         </button>
       </div>
   );
