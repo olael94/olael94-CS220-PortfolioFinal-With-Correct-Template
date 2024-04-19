@@ -1,13 +1,13 @@
 import dynamic from "next/dynamic";
 
-const Navbar = dynamic(() => import('@/components/Navbar/Navbar'));
+import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
 import WorkWidget from "@/components/WorkWidget/WorkWidget";
 import SkillsWidget from "@/components/SkillsWidget/SkillsWidget";
-const SignupWidget = dynamic(() => import('@/components/SignupWidget/SignupWidget'));
-const ThemeSwitcher = dynamic(() => import('@/components/ThemeSwitcher/ThemeSwitcher'));
+import SignupWidget from '@/components/SignupWidget/SignupWidget';
+import ThemeSwitcher from '@/components/ThemeSwitcher/ThemeSwitcher';
 import ArticleCard from "@/components/ArticleCard/ArticleCard";
-const IntroCard = dynamic(() => import('@/components/IntroCard/IntroCard'));
+import IntroCard from '@/components/IntroCard/IntroCard';
 
 
 
