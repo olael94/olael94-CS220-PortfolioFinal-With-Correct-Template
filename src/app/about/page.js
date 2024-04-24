@@ -61,7 +61,7 @@ export default function Home() {
                                   'My name is Oliver Rivera, I have a passion for coding, engineering, and creative expression. '
                               }
                               content1={
-                                  "My academic journey led me through Interior Design, Mechtronics Engineering, and now Software Engineering. When I'm not coding, I'm spending time with my family, playing video games, or listening to music."
+                                  "My academic journey led me through Interior Design, Mechatronics Engineering, and now Software Engineering. When I'm not coding, I'm spending time with my family, playing video games, or listening to music."
                               }
                               content2={
                                   "Deciding on a lifelong career wasn't easy, but software engineering felt like coming home. It combines my favorite aspects: overcoming challenges, designing, delivering top-notch work, and lending a helping hand to others."

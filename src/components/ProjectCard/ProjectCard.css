@@ -37,10 +37,10 @@
 .project-card p {
   font-size: 16px;
   color: #777;
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
+  //overflow: hidden;
+  //display: -webkit-box;
+  //-webkit-box-orient: vertical;
+  //-webkit-line-clamp: 3;
 }
 
 .project-card a {

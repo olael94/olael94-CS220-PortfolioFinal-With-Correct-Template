@@ -157,7 +157,7 @@ body.dark .tool-text-container {
 
 /* Overall CSS for Home, About, Projects, and Uses */
 body {
-  min-width: 420px;
+  min-width: 390px;
 }
 
 body {
@@ -294,9 +294,12 @@ footer {
 
   /* Overall Mobile CSS */
   main {
-    padding: 84px 10px 64px 10px; /* Top, Right, Bottom, Left */
     display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Keeps text left-aligned */
     flex-direction: column;
+    text-align: left; /* Keeps text left-aligned */
+    padding: 104px 10px 64px 10px;
   }
 
 
@@ -358,6 +361,10 @@ footer {
   .project-card-container{
     padding-left: 34px;
     flex-direction: column;
+  }
+
+  .project-card {
+    min-width: 364px;
   }
 
   /* USES page jsx Mobile CSS */
