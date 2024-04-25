@@ -7,7 +7,6 @@ import SignupWidget from '@/components/SignupWidget/SignupWidget';
 import ThemeSwitcher from '@/components/ThemeSwitcher/ThemeSwitcher';
 import ArticleCard from "@/components/ArticleCard/ArticleCard";
 import IntroCard from '@/components/IntroCard/IntroCard';
-import Head from 'next/head'; // Import Head component from Next.js
 
 
 
@@ -98,11 +97,6 @@ const articles = [
 export default function Home() {
   return (
       <div className="body">
-        <Head>
-          {/* Include the viewport meta tag in the Head component */}
-          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-          {/* Any other meta tags or head elements can go here */}
-        </Head>
         <header>
           <Navbar
               options={[
