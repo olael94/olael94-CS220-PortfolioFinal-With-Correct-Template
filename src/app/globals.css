@@ -252,6 +252,10 @@ footer {
 //flex: 0 0 calc(33.3333% - 16px); /* 33.3333% for 3 items per row, 16px is half of the gap you want between items */
   flex: 0 0 380px; /* This will set the flex-basis (initial size) of the card to 380px */
   max-width: 380px; /* This will ensure that the card width never exceeds 380px */
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  margin-left: 10px;
 }
 
 /* Mobile CSS 1000px for Projects Page */

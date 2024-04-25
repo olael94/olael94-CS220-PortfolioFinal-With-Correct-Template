@@ -2,7 +2,8 @@
   display: flex;
   justify-content: center;
   width: 100%;
-  background-color: rgba(244, 245, 245, 0.975);
+  background-color: rgba(244, 245, 245, 0.9);
+  backdrop-filter: blur(1px); /* Adjust the blur radius as needed */
   padding: 10px 20px;
   margin: 0 auto;
 }
