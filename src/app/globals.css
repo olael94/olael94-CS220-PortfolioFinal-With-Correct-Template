@@ -367,8 +367,10 @@ footer {
     flex-direction: column;
   }
 
-  .project-card {
+  .project-card-container .project-card {
     min-width: 330px;
+    margin-right: unset;
+    margin-left: unset;
   }
 
   /* USES page jsx Mobile CSS */
